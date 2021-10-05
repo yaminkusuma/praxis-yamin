@@ -60,9 +60,10 @@ print(x)
 #type data bytearray
 x = bytearray(10)
 print(x)
-#disnatory
 
 #type data memoryview
 x = memoryview(bytes(5))
 print(x)
 print(type(x))
+
+
