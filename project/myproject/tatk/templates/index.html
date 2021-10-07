@@ -6,6 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Tugas hari ini</h1>
+      <form action="" method="POST">
+          {% csrf_token %}
+
+          <input type="text" name="name">
+          <button type= "submit"> simpan </button>
+      </form>
+
+      <div class = "hasil">
+            {%for y in data%}
+            {{y.name}}
+            {%endfor%}
+      </div>
+      
 </body>
 </html>
