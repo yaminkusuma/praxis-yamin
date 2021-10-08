@@ -4,20 +4,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
 </head>
 <body>
       <form action="" method="POST">
           {% csrf_token %}
-
+          <br>
+          <h6>Input pesanan</h6>
           <input type="text" name="name">
           <button type= "submit"> simpan </button>
       </form>
-
-      <div class = "hasil">
-            {%for y in data%}
-            {{y.name}}
+      <div>
+        <table class="table table-hover mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Menu Hidangan</th>
+                    <th scope="col">Action</th>          
+             </tr>
+             <tbody>
+                 <tr>
+                    {% for y in data%}
+                    <th>{{forloop.counter}}</th>
+                    <td class="text capitalize">{{y.name}}</td>   
+                     <th>
+                         <a type="button"class="btn-succes"href="{{y.id}}/rincian">Rincian</a>
+                         <a type="button"class="btn-succes"href="{{y.id}}/edit">Edit</a>
+                         <a type="button"class="btn-succes"href="{{y.id}}/hapus">Hapus</a>           
+                        <button></button>
+                     </th>
+                 </tr>
+             </tbody>
+         </thead>
             {%endfor%}
-      </div>
-      
-</body>
+             </table>
+         </div>
+    </body>
 </html>
