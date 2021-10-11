@@ -1,0 +1,35 @@
+
+<div class='p-6'>
+    <form action="" method="post">
+         {% csrf_token %}
+        <label>makanan</label>
+        <select class="form-select" name="makanan"></select>
+            <option selected>pilih</option>
+            {% for y in dataMakanan %}
+            <option value="{{y.id}}">{{y.Nama}}</option>
+            {%endfor%}
+        </select>
+            
+        <select>
+                <label>jumlah</label>
+                <input type="text" name="jumlah_makanan" class="form.control">
+                <label>minuman</label>
+                <input type="text" name="minuman">
+                <option selected>pilih</option>
+                {% for y in dataMinum %}
+                <option value="{{y.id}}">{{y.Nama}}</option>
+                {%endfor%}
+        </select>
+     </form>
+    <div>
+        <table class='table'>
+            <thead>
+                <th>no</th>
+                <th>makanan</th>
+                <th>jumlah</th>
+                <th>harga</th>
+                <th>aksi</th>
+            </thead>
+        </table>
+    </div>
+</div>
