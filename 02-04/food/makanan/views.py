@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from . import models
+from .models import makanan
 
 # Create your views here.
 
@@ -15,6 +16,7 @@ def index(req):
     return render(req, 'makan/index.html', {
         'data_makan' : koplak,
     })
-    # return render(req, 'makan/index.html')
 
-# def input_makan (req):
+def hapusMakanan(req, id):
+    models.makanan.objects.filter(pk=id).delete()
+    return redirect('/makanan/')

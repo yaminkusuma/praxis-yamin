@@ -18,23 +18,21 @@
         <form action="" method="POST">
             {% csrf_token %}
             <br>
-            <h5 class="fw-bold">INPUT PESANAN.</h5>
-           <br>
-            <label for="exampleDataList" class="form-label">Jenis Makanan</label> 
-                <select name="jenis" id=""  class="form-select">
+           <h5 class="fw-bold">INPUT PESANAN.</h5>
+            <label for="exampleDataList" class="form-label">Jenis Minuman</label> 
+                <select name="jenis" id="" class="form-select">
                     <option selected></option>
-                    <option value="kering">kering</option>
-                    <option value="basah">basah</option>
+                    <option value="Dingin">Dingin</option>
+                    <option value="Panas">Panas</option>
                 </select>
-                <label for="exampleDataList" class="form-label">Nama Makanan</label>
-                <input type="text" name="nama"  class="form-select">
-                <label for="exampleDataList" class="form-label">Harga Makanan</label>
-                <input type="number" name="harga"  class="form-control">
-                <br>
-                <button type="submit">Simpan</button>
+                <label for="exampleDataList" class="form-label">Nama Minuman</label> 
+                <input type="text" name="nama" class="form-select">
+                <label for="exampleDataList" class="form-label">Harga Minuman</label> 
+                <input type="number" name="harga" class="form-control"><br>
+                <button type="submit" class="">Simpan</button>
             </form>
             <br>
-            <h5 class="fw-bold">P E S A N A N</h5>
+            <h4 class="fw-bold">P E S A N A N</h4>
             <br>
                 <table class="table">
                 <thead>
@@ -47,7 +45,7 @@
                       </tr>
                 </thead>
                 <body>
-                    {% for i in data_makan%}
+                    {% for i in data_minum%}
                     <tr>
                         <th scope="row" class="table-primary">{{forloop.counter}}</th>
                         <td class="table-primary">{{i.nama}}</td>
@@ -57,7 +55,7 @@
                             
                             <div class="d-grid gap-3 d-md-block">
                                 <button class="btn btn-primary" type="button">Edit</button>
-                                <button class="btn btn-danger" type="button"><a href="hapus/{{i.id}}">Delete</a></button>
+                                <button class="btn btn-danger" type="button"><a href="hapus/{{i.id}}">delete</a></button>
                             </div>
                         </td>
                     </tr>
